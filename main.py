@@ -9,16 +9,17 @@ import factors
 import divisor
 import fibonacci
 import series
+import sets
 
 options = '''
 [1]     GCD of two numbers
 [2]     LCM of two numbers
-[3]     Mode
+[3]     Mode and Frequency
 [4]     Factorial of a number
 [5]     Factors of a number
 [6]     Check Divisor
 [7]     Fibonacci series
-[8]     Sum of Series
+[8]     Series
 [9]     Play with Sets
 [10]    Distance between two points
 [11]    Solve Quadratic Equation
@@ -82,6 +83,54 @@ while(True):
                 break
             else:
                 print(f"{Fore.YELLOW}WARNING: Invalid input!")
+    elif userOpt == "9" or userOpt.lower() == "sets":
+        print(f"\n{Fore.CYAN}*********** Set is a collection of well defined objects ************\n")
+        s1 = input("Enter first set A: ")
+        s2 = input("Enter second set B: ")
+        l1 = set(s1.split())
+        l2 = set(s2.split())
+
+        print("\n[1]     Properties of set A\n[2]     Properties of set B\n[3]     Properties of both sets\n[4]     Union of both sets\n[5]     Intersection of both sets\n[6]     Difference of set A and B\n[7]     Difference of set B and A\n[8]     Symmetric Difference of set A and B\n[9]     Symmetric Difference of set B and A\n[10]    Number of Relations between both sets\n[11]    Number of Mappings from set A to B\n[12]    Number of Mappings from set B to A\n[13]    Back\n")
+
+        while(True):
+            usr = input("Choose: ")
+
+            if usr == "1":
+                print(f"{Fore.CYAN}Set A: ")
+                sets.properties_of_set(l1)
+            elif usr == "2":
+                print(f"{Fore.CYAN}Set B: ")
+                sets.properties_of_set(l2)
+            elif usr == "3":
+                print(f"{Fore.CYAN}Properties of both sets: ")
+                sets.properties_of_two_sets(l1, l2)
+            elif usr == "4":
+                sets.union_of_sets(l1, l2)
+            elif usr == "5":
+                sets.intersection_of_sets(l1, l2)
+            elif usr == "6":
+                print(f"{Fore.CYAN}\nDifference of set A and B:")
+                sets.difference_of_sets(l1, l2)
+            elif usr == "7":
+                print(f"{Fore.CYAN}\nDifference of set B and A:")
+                sets.difference_of_sets(l2, l1)
+            elif usr == "8":
+                print(f"{Fore.CYAN}\nSymmetric Difference of set A and B:")
+                sets.symmetric_difference_of_sets(l1, l2)
+            elif usr == "9":
+                print(f"{Fore.CYAN}\nSymmetric Difference of set B and A:")
+                sets.symmetric_difference_of_sets(l2, l1)
+            elif usr == "10":
+                print(f"{Fore.BLUE}Total No. of Relations between both sets: ",(2**(len(l1)*len(l2))))
+            elif usr == "11":
+                print(f"{Fore.BLUE}Total No. of Mappings from set A to set B: ",len(l2)**len(l1))
+            elif usr == "12":
+                print(f"{Fore.BLUE}Total No. of Mappings from set B to set A: ",len(l1)**len(l2))
+            elif usr == "13":
+                break
+            else:
+                print(f"{Fore.YELLOW}WARNING: Invalid input!")
+            print()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
