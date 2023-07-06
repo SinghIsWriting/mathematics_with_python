@@ -17,6 +17,32 @@ def sum_natural_numbers():
 		print("Usage: Please enter a natural number.")
 	print()
 
+def nth_term_AP():
+	print(f"\n {Fore.CYAN}++++++++++ nth Term of a finite Arithmatic Progression "+"+++++++++++\n")
+	try:
+		a = float(input("Enter the first term of AP: "))
+		d = float(input("Enter the common difference of AP: "))
+		n = int(input("Enter the nth term you want: "))
+		term = (a + ((n-1) * d))
+		print(f"\n{Fore.CYAN}{n}th term of the Series =", round(term, 3))
+	except (ValueError, SyntaxError):
+		print(f"\n{Fore.RED}Invalid input!")
+		print("Usage: Please enter a valid number.")
+	print()
+
+def nth_term_GP():
+	print(f"\n {Fore.CYAN}++++++++++ nth Term of a finite Geomatric Progression "+"+++++++++++\n")
+	try:
+		a = float(input("Enter the first term of GP: "))
+		r = float(input("Enter the common ratio of GP: "))
+		n = int(input("Enter the nth term you want: "))
+		term = (a * (r**(n-1)))
+		print(f"\n{Fore.CYAN}{n}th term of the Series =", round(term, 3))
+	except (ValueError, SyntaxError):
+		print(f"\n{Fore.RED}Invalid input!")
+		print("Usage: Please enter a valid number.")
+	print()
+
 def sum_of_AP():
 	print(f"\n {Fore.CYAN}++++++++++ Sum of a finite Arithmatic Progression "+"+++++++++++\n")
 	try:
@@ -86,4 +112,6 @@ if __name__ == "__main__":
 	# sum_natural_numbers()
 	# sum_of_AP()
 	# sum_of_GP()
-	sum_of_infinite_GP()
+	# sum_of_infinite_GP()
+	# nth_term_AP()
+	nth_term_GP()

@@ -8,7 +8,7 @@ import factorial
 import factors
 import divisor
 import fibonacci
-import sum_of_series
+import series
 
 options = '''
 [1]     GCD of two numbers
@@ -64,17 +64,21 @@ while(True):
                 print(f"{Fore.YELLOW}WARNING: Invalid input!")
     elif userOpt == "8" or userOpt.lower() == "sum of series":
         while(True):
-            print("[1]     Sum of n natural numbers\n[2]     Sum of finite AP\n[3]     Sum of finite GP\n[4]     Sum of infinite GP\n[5]     Back\n")
+            print("[1]     Sum of n natural numbers\n[2]     nth Term of AP\n[3]     nth Term of GP\n[4]     Sum of finite AP\n[5]     Sum of finite GP\n[6]     Sum of infinite GP\n[7]     Back\n")
             usr = input("Choose: ")
             if usr == "1":
-                sum_of_series.sum_natural_numbers()
+                series.sum_natural_numbers()
             elif usr == "2":
-                sum_of_series.sum_of_AP()
+                series.nth_term_AP()
             elif usr == "3":
-                sum_of_series.sum_of_GP()
+                series.nth_term_GP()
             elif usr == "4":
-                sum_of_series.sum_of_infinite_GP()
+                series.sum_of_AP()
             elif usr == "5":
+                series.sum_of_GP()
+            elif usr == "6":
+                series.sum_of_infinite_GP()
+            elif usr == "7":
                 break
             else:
                 print(f"{Fore.YELLOW}WARNING: Invalid input!")
