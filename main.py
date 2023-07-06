@@ -8,6 +8,7 @@ import factorial
 import factors
 import divisor
 import fibonacci
+import sum_of_series
 
 options = '''
 [1]     GCD of two numbers
@@ -42,25 +43,44 @@ while(True):
     elif userOpt == "6" or userOpt.lower() == "divisor":
         divisor.show()
     elif userOpt == "7" or userOpt.lower() == "fibonacci":
-        print("[1]     Fibonacci series\n[2]     nth fibonacci number\n")
-        usr = input("Choose: ")
-        if usr == "1" or usr.lower() == "series":
-            fibonacci.fibonacci_series()
-        elif usr == "2" or usr.lower() == "number":
-            print(f"\n {Fore.CYAN}++++++++++ Find nth fibonacci number "+"+++++++++++\n")
-            try:
-                num = int(input("Enter index of fibonacci number: "))
-                n = fibonacci.fibonacci_number(num)
-                print(f"{Fore.GREEN}{num}th fibonacci number =", n)
-            except (ValueError, SyntaxError):
-                print(f"\n{Fore.RED}Invalid input!")
-                print("Usage: Enter a natural number as index.")
-            print()
-        else:
-            print(f"\n{Fore.RED}Invalid input!\n")
+        while(True):
+            print("[1]     Fibonacci series\n[2]     nth fibonacci number\n[3]     Back\n")
+            usr = input("Choose: ")
+            if usr == "1" or usr.lower() == "series":
+                fibonacci.fibonacci_series()
+            elif usr == "2" or usr.lower() == "number":
+                print(f"\n {Fore.CYAN}++++++++++ Find nth fibonacci number "+"+++++++++++\n")
+                try:
+                    num = int(input("Enter index of fibonacci number: "))
+                    n = fibonacci.fibonacci_number(num)
+                    print(f"{Fore.GREEN}{num}th fibonacci number =", n)
+                except (ValueError, SyntaxError):
+                    print(f"\n{Fore.RED}Invalid input!")
+                    print("Usage: Enter a natural number as index.")
+                print()
+            elif usr == "3" or usr.lower() == "back":
+                break
+            else:
+                print(f"{Fore.YELLOW}WARNING: Invalid input!")
+    elif userOpt == "8" or userOpt.lower() == "sum of series":
+        while(True):
+            print("[1]     Sum of n natural numbers\n[2]     Sum of finite AP\n[3]     Sum of finite GP\n[4]     Sum of infinite GP\n[5]     Back\n")
+            usr = input("Choose: ")
+            if usr == "1":
+                sum_of_series.sum_natural_numbers()
+            elif usr == "2":
+                sum_of_series.sum_of_AP()
+            elif usr == "3":
+                sum_of_series.sum_of_GP()
+            elif usr == "4":
+                sum_of_series.sum_of_infinite_GP()
+            elif usr == "5":
+                break
+            else:
+                print(f"{Fore.YELLOW}WARNING: Invalid input!")
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
     else:
-        print(f"\n{Fore.RED}Invalid Input!\n")
+        print(f"{Fore.YELLOW}WARNING: Invalid input!")
 
