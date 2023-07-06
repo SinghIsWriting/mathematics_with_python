@@ -2,7 +2,7 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
 
-# defining a function that takes two integers and returns GCD of them
+# defining a function that takes two integers as parameter and returns GCD of them
 def gcdOfTwoNumbers(x,y):
 	if x<y:
 		smaller = x

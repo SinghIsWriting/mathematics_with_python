@@ -1,10 +1,11 @@
 import gcd
+import lcm
 
 options = '''
-[1]     GCD
-[2]     LCM
+[1]     GCD of two numbers
+[2]     LCM of two numbers
 [3]     Mode
-[4]     Factorial pf a number
+[4]     Factorial of a number
 [5]     Factors of a number
 [6]     Divisor of a number
 [7]     Fibonacci series
@@ -22,6 +23,8 @@ while(True):
     userOpt = input("Enter your options: ")
     if userOpt == "1" or userOpt.lower() == "gcd":
         gcd.show()
+    elif userOpt == "2" or userOpt.lower() == "lcm":
+        lcm.show()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
