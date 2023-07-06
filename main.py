@@ -10,6 +10,7 @@ import divisor
 import fibonacci
 import series
 import sets
+import distance
 
 options = '''
 [1]     GCD of two numbers
@@ -131,6 +132,8 @@ while(True):
             else:
                 print(f"{Fore.YELLOW}WARNING: Invalid input!")
             print()
+    elif userOpt == "10" or userOpt.lower() == "distance":
+        distance.euclidean_distance()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
