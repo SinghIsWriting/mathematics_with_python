@@ -11,6 +11,7 @@ import fibonacci
 import series
 import sets
 import distance
+import quadratic_equations
 
 options = '''
 [1]     GCD of two numbers
@@ -134,6 +135,8 @@ while(True):
             print()
     elif userOpt == "10" or userOpt.lower() == "distance":
         distance.euclidean_distance()
+    elif userOpt == "11" or userOpt.lower() == "quadratic equation":
+        quadratic_equations.solve()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
