@@ -1,8 +1,12 @@
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
 import gcd
 import lcm
 import mode
 import factorial
 import factors
+import divisor
 
 options = '''
 [1]     GCD of two numbers
@@ -10,7 +14,7 @@ options = '''
 [3]     Mode
 [4]     Factorial of a number
 [5]     Factors of a number
-[6]     Divisor of a number
+[6]     Check Divisor
 [7]     Fibonacci series
 [8]     Sum of Series
 [9]     Play with Sets
@@ -19,7 +23,7 @@ options = '''
 [12]    Exit
 '''
 
-print("\n\t***************** Welcome to Maths with Singh *****************\n\n")
+print("\n\t*****************", f"{Fore.BLUE}Welcome to Maths with Singh", "*****************\n\n")
 
 while(True):
     print(options)
@@ -34,6 +38,8 @@ while(True):
         factorial.show()
     elif userOpt == "5" or userOpt.lower() == "factors":
         factors.show()
+    elif userOpt == "6" or userOpt.lower() == "divisor":
+        divisor.show()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
