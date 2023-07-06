@@ -2,6 +2,7 @@ import gcd
 import lcm
 import mode
 import factorial
+import factors
 
 options = '''
 [1]     GCD of two numbers
@@ -31,6 +32,8 @@ while(True):
         mode.show()
     elif userOpt == "4" or userOpt.lower() == "factorial":
         factorial.show()
+    elif userOpt == "5" or userOpt.lower() == "factors":
+        factors.show()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break

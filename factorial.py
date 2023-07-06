@@ -20,7 +20,7 @@ def show():
                         print()
         except:
                 print(f"\n{Fore.RED}Invalid input!")
-                print("Usage: Enter an intger number.\n")
+                print("Usage: Enter a natural number.\n")
 
 if __name__ == "__main__":
         show()
