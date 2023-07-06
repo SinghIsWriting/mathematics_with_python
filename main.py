@@ -1,5 +1,6 @@
 import gcd
 import lcm
+import mode
 
 options = '''
 [1]     GCD of two numbers
@@ -25,6 +26,8 @@ while(True):
         gcd.show()
     elif userOpt == "2" or userOpt.lower() == "lcm":
         lcm.show()
+    elif userOpt == "3" or userOpt.lower() == "mode":
+        mode.show()
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
