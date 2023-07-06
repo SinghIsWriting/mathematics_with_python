@@ -18,7 +18,7 @@ def show():
                 else:
                         print(f"{Fore.GREEN}Result:", factorial_of_number(num))
                         print()
-        except:
+        except (ValueError, SyntaxError):
                 print(f"\n{Fore.RED}Invalid input!")
                 print("Usage: Enter a natural number.\n")
 

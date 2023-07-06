@@ -19,7 +19,7 @@ def show():
         else:
             print(f"{Fore.RED}No!")
         print()
-    except:
+    except (ValueError, SyntaxError):
         print(f"\n{Fore.RED}Invalid input!")
         print("Usage: Enter a natural number.\n")
 

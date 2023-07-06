@@ -7,6 +7,7 @@ import mode
 import factorial
 import factors
 import divisor
+import fibonacci
 
 options = '''
 [1]     GCD of two numbers
@@ -40,7 +41,26 @@ while(True):
         factors.show()
     elif userOpt == "6" or userOpt.lower() == "divisor":
         divisor.show()
+    elif userOpt == "7" or userOpt.lower() == "fibonacci":
+        print("[1]     Fibonacci series\n[2]     nth fibonacci number\n")
+        usr = input("Choose: ")
+        if usr == "1" or usr.lower() == "series":
+            fibonacci.fibonacci_series()
+        elif usr == "2" or usr.lower() == "number":
+            print(f"\n {Fore.CYAN}++++++++++ Find nth fibonacci number "+"+++++++++++\n")
+            try:
+                num = int(input("Enter index of fibonacci number: "))
+                n = fibonacci.fibonacci_number(num)
+                print(f"{Fore.GREEN}{num}th fibonacci number =", n)
+            except (ValueError, SyntaxError):
+                print(f"\n{Fore.RED}Invalid input!")
+                print("Usage: Enter a natural number as index.")
+            print()
+        else:
+            print(f"\n{Fore.RED}Invalid input!\n")
     elif userOpt == "12" or userOpt.lower() == "exit":
         print("\nThanks for using this script :)")
         break
+    else:
+        print(f"\n{Fore.RED}Invalid Input!\n")
 
